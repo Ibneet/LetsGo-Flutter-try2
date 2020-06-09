@@ -26,136 +26,138 @@ class CompanionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: selectCompanion,
-      child: Card(
-          color: Colors.blue[100],
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20)
-          ),
-          elevation: 10,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Stack(
-                children: <Widget>[
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15)
-                    ),
-                    child: Image.network(
-                      imageUrl,
-                      height: 225,
-                      width: double.infinity,
-                      fit: BoxFit.cover
-                    ),
-                  ),
-                  Positioned(
-                    right: 2,
-                    child: IconButton(
-                      icon: Icon(Icons.favorite), 
-                      iconSize: 32,
-                      color: Colors.white60,
-                      onPressed: (){}
-                    ),
-                  )
-                ]
-              ),
-              Container(
-                height: 170.5,
-                padding: const EdgeInsets.only(top: 20,left: 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(15),
-                    bottomLeft: Radius.circular(15)
-                  ),
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.blue.withOpacity(0.4),
-                      Colors.blue[400]
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter
-                  )
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Container(
+        child: Card(
+            color: Colors.blue[100],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)
+            ),
+            elevation: 10,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Stack(
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          'Name: ',
-                          style: Theme.of(context).textTheme.headline2,
-                        ),
-                        Text(
-                          name, 
-                          style: Theme.of(context).textTheme.headline3,
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                        )
-                      ],
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15),
+                      ),
+                      child: Image.network(
+                        imageUrl,
+                        height: 351,
+                        width: double.infinity,
+                        fit: BoxFit.cover
+                      ),
                     ),
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          'Gender: ',
-                          style: Theme.of(context).textTheme.headline2,
-                        ),
-                        Text(
-                          gender, 
-                          style: Theme.of(context).textTheme.headline3,
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                        )
-                      ],
+                    Positioned(
+                      right: 2,
+                      child: IconButton(
+                        icon: Icon(Icons.favorite), 
+                        iconSize: 32,
+                        color: Colors.white60,
+                        onPressed: (){}
+                      ),
                     ),
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          'D.O.B.: ',
-                          style: Theme.of(context).textTheme.headline2,
+                    Positioned(
+                      bottom: 0,
+                      child: Container(
+                      width: 170,
+                      padding: const EdgeInsets.only(top: 20,left: 5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(15)
                         ),
-                        Text(
-                          DateFormat.yMMMd().format(date), 
-                          style: Theme.of(context).textTheme.headline3,
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                        )
-                      ],
+                        color: Colors.black54
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'Name: ',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                              Text(
+                                name, 
+                                style: Theme.of(context).textTheme.headline3,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'Gender: ',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                              Text(
+                                gender, 
+                                style: Theme.of(context).textTheme.headline3,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'D.O.B.: ',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                              Text(
+                                DateFormat.yMMMd().format(date), 
+                                style: Theme.of(context).textTheme.headline3,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'Occupation: ',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                              Text(
+                                occupation, 
+                                style: Theme.of(context).textTheme.headline3,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'Date: ',
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                              Text(
+                                DateFormat.yMMMd().format(date), 
+                                style: Theme.of(context).textTheme.headline3,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          'Occupation: ',
-                          style: Theme.of(context).textTheme.headline2,
-                        ),
-                        Text(
-                          occupation, 
-                          style: Theme.of(context).textTheme.headline3,
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          'Date: ',
-                          style: Theme.of(context).textTheme.headline2,
-                        ),
-                        Text(
-                          DateFormat.yMMMd().format(date), 
-                          style: Theme.of(context).textTheme.headline3,
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                        )
-                      ],
-                    ),
-                  ],
+                  )
+                  ]
                 ),
-              ),
-            ],
-          ),   
-        ),
+                
+              ],
+            ),   
+          ),
+      ),
       );
   }
 }

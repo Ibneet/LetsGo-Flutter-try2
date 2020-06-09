@@ -46,7 +46,7 @@ class CompanionListScreen extends StatelessWidget {
         itemCount: companions.length,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300,
-          childAspectRatio: 1/2.25,
+          childAspectRatio: 1/2,
           crossAxisSpacing: 1,
           mainAxisSpacing: 10
         ),

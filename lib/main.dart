@@ -30,13 +30,13 @@ class MyApp extends StatelessWidget {
           headline2: TextStyle(
             fontFamily: 'GentiumBookBasic',
             fontSize: 16,
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
           headline3: TextStyle(
             fontFamily: 'GentiumBookBasic',
             fontSize: 16,
-            color: Colors.grey[900],
+            color: Colors.white70,
           ),
         ),
         appBarTheme: AppBarTheme(
